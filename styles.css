@@ -1,0 +1,383 @@
+:root {
+  --negro: #000;
+  --blanco: #fff;
+  --gris: #767677;
+  --claro: #eceff1;
+  --promo: #e32b2b;
+  --club: #4a8c6b;
+  --header-h: 64px;
+}
+
+@font-face { font-family: "AdidasFont"; src: url("fonts/adidasFG-CompressedBold.woff2") format("woff2"); font-display: swap; }
+@font-face { font-family: "AdidasFont2"; src: url("fonts/AdihausDIN-Bold.woff2") format("woff2"); font-display: swap; }
+@font-face { font-family: "AdidasFont3"; src: url("fonts/AdihausDIN-Regular.woff2") format("woff2"); font-display: swap; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "Barlow", Helvetica, Arial, sans-serif;
+  color: var(--negro);
+  letter-spacing: .02em;
+  overflow-x: hidden;
+}
+
+a { color: inherit; text-decoration: none; }
+a:hover { color: inherit; }
+
+.seccion { padding-top: 70px; padding-bottom: 30px; }
+
+.titulo-seccion {
+  font-family: "Oswald", "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+.usp-bar { background: #f5f5f5; color: #333; }
+.header-top a { font-size: 12px; }
+.header-top a:hover { text-decoration: underline; }
+
+.header { z-index: 1030; }
+.header-bar { height: var(--header-h); }
+
+.logo img { width: 70px; height: auto; display: block; }
+.logo-offcanvas { width: 60px; }
+
+.nav-principal .nav-item { display: flex; align-items: stretch; }
+.nav-principal .nav-link {
+  display: flex; align-items: center;
+  height: var(--header-h);
+  padding: 0 18px;
+  font-size: 17px;
+  color: var(--negro);
+  border-bottom: 3px solid transparent;
+}
+.nav-principal .nav-item:hover .nav-link { border-bottom-color: var(--negro); }
+.nav-link--promo, .text-promo { color: var(--promo) !important; }
+.nav-item--mega:hover .nav-link { border-bottom-color: var(--promo); }
+
+
+
+.mega {
+  display: none;
+  position: absolute; left: 0; right: 0; top: var(--header-h);
+  background: var(--blanco);
+  padding: 40px 6%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, .08);
+  border-top: 1px solid #e5e5e5;
+}
+.nav-item--mega:hover .mega { display: block; }
+.mega__col { display: flex; flex-direction: column; padding-right: 30px; }
+.mega__col--first { border-right: 1px solid #e5e5e5; margin-right: 30px; }
+.mega__col h4 { font-size: 16px; font-weight: 700; margin-bottom: 12px; }
+.mega__col a { font-size: 15px; line-height: 1.45; padding: 3px 0; }
+.mega__col a:hover { text-decoration: underline; }
+.mega__gap { height: 24px; }
+
+
+
+.buscador-wrapper {
+  position: relative;
+  align-items: center;
+  width: 220px;
+  background: var(--claro);
+}
+
+
+.buscador-input {
+  width: 100%;
+  border: none;
+  padding: 8px 34px 8px 12px;
+  font-size: 15px;
+  outline: none;
+  background: transparent;
+}
+
+
+.buscador-icono { position: absolute; right: 12px; pointer-events: none; }
+
+.icono-header-btn {
+  background: none; border: none; padding: 0;
+  display: flex; align-items: center;
+  font-size: 22px; color: var(--negro);
+}
+.icono-header-btn:hover { color: #555; }
+
+.notification-badge {
+  position: absolute; top: -6px; right: -8px;
+  background: var(--club); color: var(--blanco);
+  font-size: 10px; font-weight: 700;
+  width: 17px; height: 17px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.menu-panel { --bs-offcanvas-width: min(85vw, 360px); }
+.menu-fondo { visibility: hidden; margin: 0; transition: opacity .3s ease, visibility .3s; }
+.menu-toggle:checked ~ .menu-panel { transform: none; visibility: visible; }
+.menu-toggle:checked ~ .menu-fondo { opacity: .5; visibility: visible; }
+label.icono-header-btn, label.btn-close { cursor: pointer; }
+
+.menu-movil li { border-bottom: 1px solid #e5e5e5; }
+.menu-movil a { display: block; padding: 14px 0; font-size: 18px; }
+
+.etiqueta {
+  display: inline-block;
+  background: var(--blanco);
+  padding: 2px 6px;
+  font-size: 18px;
+}
+.etiqueta--titulo {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  letter-spacing: .12em;
+}
+.etiqueta--timer { font-weight: 700; padding: 6px; }
+
+.btn-adidas {
+  display: inline-flex; align-items: center; gap: 16px;
+  background: var(--blanco);
+  color: var(--negro);
+  font-weight: 700; font-size: 18px; text-transform: uppercase;
+  padding: 14px 18px;
+  box-shadow: 4px 4px 0 -1px var(--blanco), 4px 4px 0 0 var(--negro);
+  transition: color .15s;
+}
+.btn-adidas:hover { color: var(--gris); }
+.btn-adidas--sm { padding: 8px 10px; font-size: 16px; border: 1px solid var(--negro); box-shadow: none; text-transform: none; }
+
+.link-adidas {
+  font-weight: 700; font-size: 18px;
+  text-decoration: underline; text-underline-offset: 4px;
+}
+.link-adidas:hover { background: var(--negro); color: var(--blanco); }
+
+.hero__content { position: absolute; left: 8%; bottom: 60px; z-index: 2; }
+
+.hero--ae, .hero--promo { aspect-ratio: 1920 / 800; background: #111; }
+.hero__foto { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+
+
+.hero-duo__wide { aspect-ratio: 1920 / 800; }
+.hero-duo__panel { height: 350px; overflow: hidden; }
+.hero-duo__panel--left { background: linear-gradient(135deg, #3c4a43, #1f2622); }
+.hero-duo__panel--right { background: linear-gradient(135deg, #5c6b66, #2b332f); }
+.hero-duo__tag { position: absolute; left: 24px; bottom: 24px; font-size: 14px; padding: 6px 8px; }
+
+
+
+
+.producto-card { overflow: hidden; border: 1px solid transparent; transition: border-color .2s ease; }
+.producto-card:hover { border-color: #111; }
+.producto-img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; display: block; }
+
+
+
+.carrusel { scroll-snap-type: x mandatory; padding-bottom: 16px; }
+.carrusel > * { scroll-snap-align: start; }
+
+
+
+.teaser { border: 1px solid transparent; padding-bottom: 20px; }
+.teaser:hover { border-color: var(--negro); }
+.teaser__img { aspect-ratio: 3 / 4; position: relative; overflow: hidden; }
+.teaser h3 { font-size: 18px; font-weight: 700; margin: 22px 16px 16px; }
+.teaser p { font-size: 17px; line-height: 1.45; margin: 0 16px 24px; }
+.teaser .link-adidas { margin: 0 16px; }
+.teaser__big { font-family: "Barlow Condensed", sans-serif; font-weight: 700; color: var(--blanco); font-size: 80px; margin-top: 10px; }
+.teaser__small { position: absolute; top: 28px; left: 26px; font-family: "Barlow Condensed", sans-serif; font-weight: 700; color: var(--blanco); letter-spacing: .15em; font-size: 20px; }
+
+.pestanas .nav-link {
+  border: 1px solid #ccc; border-radius: 0;
+  color: var(--negro); padding: 8px 12px; font-size: 17px;
+  cursor: pointer; user-select: none;
+}
+
+
+.pestana:hover { border-color: var(--negro); }
+#tab-nov:checked ~ .pestanas-cabecera label[for="tab-nov"],
+#tab-prox:checked ~ .pestanas-cabecera label[for="tab-prox"] {
+  background: var(--negro); border-color: var(--negro); color: var(--blanco);
+}
+
+
+
+#tab-nov:checked ~ .pestanas-contenido .tab-panel--nov,
+#tab-prox:checked ~ .pestanas-contenido .tab-panel--prox { display: block; }
+
+
+
+.product { border: 1px solid transparent; padding-bottom: 40px; height: 100%; }
+.product:hover { border-color: var(--negro); }
+.product__img { aspect-ratio: 1 / 1; position: relative; overflow: hidden; background: var(--claro); }
+.fav { position: absolute; z-index: 1; top: 16px; right: 18px; font-size: 24px; }
+.price { font-weight: 700; font-size: 17px; margin: 12px 10px 14px; }
+.product h3 { font-weight: 400; font-size: 17px; margin: 0 10px 14px; }
+.cat { color: var(--gris); font-size: 17px; margin: 0 10px; }
+
+.tarjeta-adidas { aspect-ratio: 3 / 4; }
+.tarjeta-app { aspect-ratio: 1 / 1; }
+.tarjeta-app img { width: 40%; object-fit: contain; }
+
+.borde-hover { outline: 1px solid transparent; outline-offset: -1px; transition: outline .1s ease-in-out; }
+.borde-hover:hover { outline-color: var(--negro); }
+
+
+
+.btn-etiqueta {
+  font-family: "AdidasFont2", "Barlow", Helvetica, Arial, sans-serif;
+  font-weight: 700; font-size: 13px; letter-spacing: 1px; text-transform: uppercase;
+  background: var(--blanco); color: var(--negro);
+  padding: 10px 15px;
+  border: 1px solid transparent;
+  transition: border-color .1s ease-in-out;
+  z-index: 2;
+}
+
+
+
+
+a:hover > .btn-etiqueta { border-color: var(--negro); }
+.tarjeta-app .btn-etiqueta { font-size: 12px; padding: 8px 10px; }
+
+.tile { position: relative; display: block; aspect-ratio: 2 / 3; border: 1px solid transparent; }
+.tile:hover { border-color: var(--negro); }
+.tile__label {
+  position: absolute; left: 16px; bottom: 16px;
+  background: var(--blanco); font-weight: 700; font-size: 17px; padding: 6px 10px;
+}
+
+
+
+.enlaces h4 { font-size: 19px; font-weight: 700; margin: 0; }
+.enlaces a { font-size: 17px; }
+.enlaces a:hover { text-decoration: underline; }
+
+.about { padding-top: 90px !important; }
+.about__texto { max-width: 806px; }
+.about h2 {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 48px; letter-spacing: .08em; line-height: 1.05;
+}
+
+
+
+.about p { font-size: 18px; line-height: 1.45; text-align: justify; margin-bottom: 27px; }
+.about__logo { width: 60px; filter: invert(1); }
+
+.club { background: var(--club); color: var(--blanco); padding: 50px 20px; }
+.club h2 {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 32px; letter-spacing: .14em;
+}
+
+
+
+
+.footer__col { display: flex; flex-direction: column; gap: 16px; }
+.footer__col h4 { font-size: 17px; font-weight: 700; margin: 0; }
+.footer__col a { font-size: 15px; line-height: 1.45; }
+.footer__col a:hover { text-decoration: underline; color: var(--blanco); }
+.redes a { font-size: 22px; }
+
+.footer__legal { border-color: #333 !important; }
+.footer__legal li a { font-size: 14px; color: #d3d7da; padding: 0 8px; }
+.footer__legal li + li a { border-left: 1px solid #666; }
+.footer__legal a:hover { text-decoration: underline; }
+
+@media (min-width: 1400px) {
+  .container-xxl { max-width: 1560px; }
+  .hero__content { bottom: 80px; }
+}
+
+
+
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+  .nav-principal .nav-link { padding: 0 12px; font-size: 16px; }
+  .buscador-wrapper { width: 180px; }
+  .mega__col h4 { font-size: 15px; }
+  .mega__col a { font-size: 14px; }
+}
+
+
+
+@media (max-width: 1199.98px) {
+  .header-top { padding-left: 1.5rem !important; padding-right: 1.5rem !important; }
+  .hero__content { left: 5%; bottom: 32px; }
+  .etiqueta--titulo { font-size: 24px; }
+  .etiqueta { font-size: 16px; }
+  .btn-adidas { font-size: 16px; padding: 12px 16px; }
+  .btn-adidas--sm { font-size: 15px; padding: 6px 10px; }
+  .hero__content .mt-4 { margin-top: 1rem !important; }
+  .titulo-seccion { font-size: 24px; }
+  .about h2 { font-size: 38px; }
+  .club h2 { font-size: 26px; }
+  .seccion { padding-top: 56px; }
+}
+
+
+
+
+@media (max-width: 767.98px) {
+  .hero--ae, .hero--promo { aspect-ratio: auto; }
+  .hero__foto { position: static; aspect-ratio: 4 / 3; height: auto; }
+  .hero--ae .hero__foto { object-position: 30% center; }
+  .hero--promo .hero__foto { object-position: 35% center; }
+  .hero__content { position: static; padding: 20px 16px 28px; }
+  .hero--ae { background: #2b1f1f; }
+  .hero--promo { background: #2f303a; }
+
+
+
+  .hero-duo__panel { height: auto; aspect-ratio: 4 / 5; }
+
+  .seccion { padding-top: 40px; padding-bottom: 16px; }
+  .titulo-seccion { font-size: 20px; margin-bottom: 20px; }
+  .pestana { font-size: 15px; padding: 6px 10px; }
+  .link-adidas { font-size: 16px; }
+
+  .teaser h3 { font-size: 16px; margin: 16px 12px 10px; }
+  .teaser p { font-size: 15px; margin: 0 12px 16px; }
+  .teaser .link-adidas { margin: 0 12px; }
+
+  .price, .product h3, .cat { font-size: 15px; }
+
+  .tile__label { left: 8px; bottom: 8px; font-size: 14px; padding: 4px 8px; }
+
+  .enlaces h4 { font-size: 17px; }
+  .enlaces a { font-size: 15px; }
+
+  .about { padding-top: 56px !important; }
+  .about h2 { font-size: 28px; }
+  .about p { font-size: 16px; text-align: left; }
+
+  .club { padding: 40px 16px; }
+  .club h2 { font-size: 22px; letter-spacing: .08em; }
+
+  .footer__col h4 { font-size: 16px; }
+  .footer__col a { font-size: 14px; }
+  .footer__legal li a { font-size: 13px; padding: 2px 6px; }
+}
+
+
+
+
+
+
+
+
+@media (max-width: 575.98px) {
+  .header .container-fluid { padding-left: 12px !important; padding-right: 12px !important; }
+  .logo img { width: 56px; }
+  .header .gap-3 { gap: .75rem !important; }
+  .etiqueta--titulo { font-size: 21px; letter-spacing: .08em; }
+  .etiqueta, .etiqueta--timer { font-size: 14px; }
+  .btn-etiqueta { font-size: 10px; padding: 6px 8px; margin: 8px !important; letter-spacing: .5px; }
+  .about h2 { font-size: 23px; }
+  .club h2 { font-size: 18px; }
+  .footer .row > .footer__col { padding-right: 8px; }
+}

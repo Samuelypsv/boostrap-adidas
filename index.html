@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>adidas | Tienda de deportes</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&family=Barlow:wght@400;500;600;700&family=Oswald:wght@700&display=swap" rel="stylesheet">
+
+  <link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="usp-bar text-center py-1 small">Devoluciones y cambios sin gastos de envío</div>
+  <ul class="header-top d-none d-md-flex list-unstyled justify-content-end gap-3 small mb-0 px-5 py-1">
+    <li><a href="#">buscador de tiendas</a></li>
+    <li><a href="#">ayuda</a></li>
+    <li><a href="#">pedidos y devoluciones</a></li>
+    <li><a href="#">tarjetas regalo</a></li>
+    <li><a href="#">únete al club</a></li>
+  </ul>
+
+  <input type="checkbox" id="menu-toggle" class="menu-toggle" hidden>
+
+  <header class="header sticky-top bg-white border-bottom">
+    <div class="container-fluid px-3 px-lg-5">
+      <div class="d-flex align-items-center justify-content-between header-bar">
+
+        <label for="menu-toggle" class="icono-header-btn d-xl-none mb-0" aria-label="Abrir menú">
+          <i class="bi bi-list fs-3"></i>
+        </label>
+
+        <a href="#" class="logo">
+          <img src="images/logoadidas.jpg" alt="adidas">
+        </a>
+
+
+        <nav class="d-none d-xl-flex align-self-stretch">
+          <ul class="nav nav-principal h-100">
+            <li class="nav-item"><a href="#" class="nav-link fw-bold">Hombre</a></li>
+            <li class="nav-item"><a href="#" class="nav-link fw-bold">Mujer</a></li>
+            <li class="nav-item"><a href="#" class="nav-link fw-bold">Niños</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Calzado</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Deportes</a></li>
+            <li class="nav-item nav-item--mega">
+              <a href="#" class="nav-link nav-link--promo fw-bold">Promoción</a>
+
+              <div class="mega">
+                <div class="row g-0">
+                  <div class="col mega__col mega__col--first">
+                    <h4>Hombre</h4>
+                    <a href="#">Hombre</a><a href="#">Calzado</a><a href="#">Ropa</a><a href="#">Accesorios</a>
+                    <span class="mega__gap"></span>
+                    <a href="#">Camisetas</a><a href="#">Pantalones cortos</a><a href="#">Pantalones chándal</a>
+                    <a href="#">Sudaderas, chaquetas y sudaderas con capucha</a><a href="#">Chaquetas</a>
+                    <a href="#">Chanclas y hawaianas</a><a href="#">Chándales</a><a href="#">Bolsas &amp; Mochilas</a>
+                  </div>
+
+
+                  <div class="col mega__col">
+                    <h4>Mujer</h4>
+                    <a href="#">Mujer</a><a href="#">Calzado</a><a href="#">Ropa</a><a href="#">Accesorios</a>
+                    <span class="mega__gap"></span>
+                    <a href="#">Camisetas y tops</a><a href="#">Pantalones chándal</a><a href="#">Mallas</a>
+                    <a href="#">Sudaderas, chaquetas y sudaderas con capucha</a><a href="#">Chaquetas</a>
+                    <a href="#">Chándales</a><a href="#">Pantalones cortos</a><a href="#">Faldas y vestidos</a><a href="#">Bolsas y mochilas</a>
+                  </div>
+
+                  <div class="col mega__col">
+                    <h4>Niños</h4>
+                    <a href="#">Niños</a><a href="#">Zapatillas niños</a><a href="#">Ropa niños</a><a href="#">Ropa chica</a><a href="#">Accesorios</a>
+                    <span class="mega__gap"></span>
+                    <a href="#">Chándales</a><a href="#">Camisetas</a><a href="#">Pantalones</a><a href="#">Pantalones cortos</a><a href="#">Mochilas y bolsas</a>
+                  </div>
+                  <div class="col mega__col">
+                    <h4>Deportes</h4>
+                    <a href="#">Fútbol</a><a href="#">Running</a><a href="#">Golf</a><a href="#">Gimnasio y training</a>
+                    <a href="#">Tenis</a><a href="#">Outdoor</a><a href="#">Natación</a><a href="#">Baloncesto</a>
+                  </div>
+
+                  <div class="col mega__col">
+                    <h4>Colecciones</h4>
+                    <a href="#">Originals</a><a href="#">adicolor</a><a href="#">Ozweego</a><a href="#">Tiro</a><a href="#">Adilette</a>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </nav>
+
+
+
+
+        <div class="d-flex align-items-center gap-3">
+          <div class="buscador-wrapper d-none d-xl-flex">
+            <input type="text" placeholder="Buscar" class="buscador-input" aria-label="Buscar">
+            <i class="bi bi-search buscador-icono"></i>
+          </div>
+
+          <a href="#" class="icono-header-btn position-relative" aria-label="Mi cuenta">
+            <i class="bi bi-person"></i>
+            <span class="notification-badge">1</span>
+          </a>
+          <a href="#" class="icono-header-btn" aria-label="Favoritos"><i class="bi bi-heart"></i></a>
+          <a href="#" class="icono-header-btn" aria-label="Carrito"><i class="bi bi-bag"></i></a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+
+  <label for="menu-toggle" class="offcanvas-backdrop fade menu-fondo" aria-hidden="true"></label>
+  <div class="offcanvas offcanvas-start menu-panel" aria-label="Menú">
+    <div class="offcanvas-header border-bottom">
+      <img src="images/logoadidas.jpg" alt="adidas" class="logo-offcanvas">
+      <label for="menu-toggle" class="btn-close mb-0" aria-label="Cerrar"></label>
+    </div>
+
+    <div class="offcanvas-body">
+      <div class="buscador-wrapper w-100 mb-4">
+        <input type="text" placeholder="Buscar" class="buscador-input" aria-label="Buscar">
+        <i class="bi bi-search buscador-icono"></i>
+      </div>
+
+      <ul class="list-unstyled menu-movil">
+        <li><a href="#" class="fw-bold">Hombre</a></li>
+        <li><a href="#" class="fw-bold">Mujer</a></li>
+        <li><a href="#" class="fw-bold">Niños</a></li>
+        <li><a href="#">Calzado</a></li>
+        <li><a href="#">Deportes</a></li>
+        <li><a href="#" class="fw-bold text-promo">Promoción</a></li>
+      </ul>
+    </div>
+  </div>
+
+
+
+  <main>
+
+    <section class="hero hero--ae position-relative overflow-hidden">
+      <img src="images/pagina/hero-anthony-edwards.png" alt="Anthony Edwards con la zapatilla AE 3" class="hero__foto">
+      <div class="hero__content d-flex flex-column align-items-start gap-2">
+        <h2 class="etiqueta etiqueta--titulo mb-0">ANTHONY EDWARDS 3</h2>
+        <p class="etiqueta mb-0">El talento reconoce al talento.</p>
+        <a href="#" class="btn-adidas mt-4">Comprar <i class="bi bi-arrow-right"></i></a>
+      </div>
+    </section>
+
+
+
+
+    <section class="hero hero--promo position-relative overflow-hidden">
+      <img src="images/pagina/hero-promo-30.jpg" alt="Zapatillas adidas en oferta" class="hero__foto">
+      <div class="hero__content d-flex flex-column align-items-start gap-2">
+        <div class="d-flex flex-column flex-xl-row align-items-start align-items-xl-stretch gap-1">
+          <h2 class="etiqueta etiqueta--titulo mb-0">AHORRA HASTA UN 30%</h2>
+          <span class="etiqueta etiqueta--timer">Esta oferta termina en 2 : 00 : 28 : 43</span>
+        </div>
+        <p class="etiqueta mb-0">Aprovecha las ofertas de otoño ¡Hasta un 30%!</p>
+        <div class="d-flex flex-wrap gap-2 mt-4">
+          <a href="#" class="btn-adidas btn-adidas--sm">Hombre <i class="bi bi-arrow-right"></i></a>
+          <a href="#" class="btn-adidas btn-adidas--sm">Mujer <i class="bi bi-arrow-right"></i></a>
+          <a href="#" class="btn-adidas btn-adidas--sm">Niños <i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div>
+    </section>
+
+
+
+
+    <section class="hero-duo">
+      <div class="hero-duo__wide position-relative d-none d-md-block">
+        <img src="images/Imagen lamine y jude bellingham.avif" alt="Lamine Yamal y Jude Bellingham" class="w-100 h-100 object-fit-cover d-block">
+        <span class="badge bg-white text-dark rounded-0 hero-duo__tag">TE E PREDATOR</span>
+      </div>
+
+      <div class="row g-0 d-md-none">
+        <div class="col-12 hero-duo__panel hero-duo__panel--left position-relative">
+          <img src="images/Imagen lamine.jpg" alt="Lamine Yamal" class="w-100 h-100 object-fit-cover d-block">
+          <span class="badge bg-white text-dark rounded-0 hero-duo__tag">TE E PREDATOR</span>
+        </div>
+
+        <div class="col-12 hero-duo__panel hero-duo__panel--right">
+          <img src="images/Imagen jude bellingham.jpg" alt="Jude Bellingham" class="w-100 h-100 object-fit-cover d-block">
+        </div>
+      </div>
+    </section>
+
+    <section class="container-xxl seccion">
+      <h2 class="titulo-seccion">Encuentra la bota perfecta para ti</h2>
+      <div class="row g-4">
+        <div class="col-6 col-md-3">
+          <div class="producto-card"><img src="images/imagen bota verde.avif" alt="F50" class="producto-img"></div>
+          <h3 class="h6 fw-bold mt-3 mb-1">F50</h3>
+          <p class="small text-muted mb-2">Provoca el caos.</p>
+          <a href="#" class="link-dark fw-semibold">F50</a>
+        </div>
+
+
+        <div class="col-6 col-md-3">
+          <div class="producto-card"><img src="images/imagen bota negra y verde.avif" alt="Predator" class="producto-img"></div>
+          <h3 class="h6 fw-bold mt-3 mb-1">Predator</h3>
+          <p class="small text-muted mb-2">Toma el control.</p>
+          <a href="#" class="link-dark fw-semibold">Predator</a>
+        </div>
+
+
+        <div class="col-6 col-md-3">
+          <div class="producto-card"><img src="images/imagen bota verde azulada.avif" alt="Copa" class="producto-img"></div>
+          <h3 class="h6 fw-bold mt-3 mb-1">Copa</h3>
+          <p class="small text-muted mb-2">Conexión inigualable.</p>
+          <a href="#" class="link-dark fw-semibold">Copa</a>
+        </div>
+
+
+        <div class="col-6 col-md-3">
+          <div class="producto-card"><img src="images/imagen bota verde y azul.avif" alt="F50 Sparkfusion" class="producto-img"></div>
+          <h3 class="h6 fw-bold mt-3 mb-1">F50 Sparkfusion</h3>
+          <p class="small text-muted mb-2">Para ellas.</p>
+          <a href="#" class="link-dark fw-semibold">F50 Sparkfusion</a>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+    <section class="container-xxl seccion">
+      <div class="row flex-nowrap overflow-auto g-2 carrusel">
+        <div class="col-10 col-md-5 col-xl-3">
+          <article class="teaser h-100">
+            <div class="teaser__img"><img src="images/pagina/teaser-denim.jpg" alt="Denim adidas Originals" class="w-100 h-100 object-fit-cover d-block"></div>
+            <h3>Denim adidas Originals</h3>
+            <p>Un clásico con un toque noventero.</p>
+            <a href="#" class="link-adidas">Comprar</a>
+          </article>
+        </div>
+
+
+        <div class="col-10 col-md-5 col-xl-3">
+          <article class="teaser h-100">
+            <div class="teaser__img"><img src="images/pagina/teaser-tenis.jpg" alt="Iva Jovic con la nueva colección de tenis" class="w-100 h-100 object-fit-cover d-block"></div>
+            <h3>Nueva colección tenis</h3>
+            <p>Tenis para todos. Estilo para siempre.</p>
+            <a href="#" class="link-adidas">Comprar</a>
+          </article>
+        </div>
+
+
+        <div class="col-10 col-md-5 col-xl-3">
+          <article class="teaser h-100">
+            <div class="teaser__img"><img src="images/pagina/teaser-dropset.jpg" alt="Zapatillas Adizero Dropset Pro" class="w-100 h-100 object-fit-cover d-block"></div>
+            <h3>Adizero Dropset Pro</h3>
+            <p>Mejora tu velocidad. Entrena tu fuerza.</p>
+            <a href="#" class="link-adidas">Comprar</a>
+          </article>
+        </div>
+
+        <div class="col-10 col-md-5 col-xl-3">
+          <article class="teaser h-100">
+            <div class="teaser__img"><img src="images/pagina/teaser-running.jpg" alt="Corredores con equipación Adizero" class="w-100 h-100 object-fit-cover d-block"></div>
+            <h3>Ligereza y velocidad</h3>
+            <p>Alcanza tu máxima velocidad y compite para ganar con las equipaciones técnicas ADIZERO.</p>
+            <a href="#" class="link-adidas">Comprar</a>
+          </article>
+        </div>
+
+
+        <div class="col-10 col-md-5 col-xl-3">
+          <article class="teaser h-100">
+            <div class="teaser__img"><img src="images/pagina/teaser-disney.png" alt="Disney+" class="w-100 h-100 object-fit-cover d-block"></div>
+            <h3>Disfruta de un mes de Disney+</h3>
+            <p>Canjea tus puntos adiClub por 1 mes de Disney+ (plan estándar con anuncios).</p>
+            <a href="#" class="link-adidas">Ver oferta</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+
+    <section class="container-xxl seccion">
+      <input type="radio" name="pestana" id="tab-nov" class="tab-radio" checked hidden>
+      <input type="radio" name="pestana" id="tab-prox" class="tab-radio" hidden>
+
+      <div class="d-flex justify-content-between align-items-center mb-4 pestanas-cabecera">
+        <ul class="nav nav-pills gap-2 pestanas">
+          <li class="nav-item"><label for="tab-nov" class="nav-link pestana mb-0">Novedades</label></li>
+          <li class="nav-item"><label for="tab-prox" class="nav-link pestana mb-0">Próximamente</label></li>
+        </ul>
+        <a href="#" class="link-adidas">Ver todo</a>
+      </div>
+
+
+
+
+      <div class="tab-content pestanas-contenido">
+        <div class="tab-pane tab-panel--nov">
+          <div class="row flex-nowrap overflow-auto g-2 carrusel">
+            <div class="col-8 col-md-4 col-xl-3"><article class="product">
+              <div class="product__img"><img src="images/pagina/samba-og-zueco.jpg" alt="Zapatilla estilo zueco Samba OG" class="w-100 h-100 object-fit-cover d-block"><i class="bi bi-heart fav"></i></div>
+              <p class="price">€ 110</p><h3>ZAPATILLA ESTILO ZUECO SAMBA OG</h3><p class="cat">Originals</p>
+            </article></div>
+
+
+            <div class="col-8 col-md-4 col-xl-3"><article class="product">
+              <div class="product__img"><img src="images/pagina/badbo-1-1-low.jpg" alt="Zapatilla BADBO 1.1 Low" class="w-100 h-100 object-fit-cover d-block"><i class="bi bi-heart fav"></i></div>
+              <p class="price">€ 120</p><h3>Zapatilla BADBO 1.1 Low</h3><p class="cat">Originals</p>
+            </article></div>
+
+
+            <div class="col-8 col-md-4 col-xl-3"><article class="product">
+              <div class="product__img"><img src="images/pagina/sambae.jpg" alt="Zapatilla Sambae" class="w-100 h-100 object-fit-cover d-block"><i class="bi bi-heart fav"></i></div>
+              <p class="price">€ 110</p><h3>Zapatilla Sambae</h3><p class="cat">Originals</p>
+            </article></div>
+
+
+            <div class="col-8 col-md-4 col-xl-3"><article class="product">
+              <div class="product__img"><img src="images/pagina/badbo-1-0.jpg" alt="BADBO 1.0" class="w-100 h-100 object-fit-cover d-block"><i class="bi bi-heart fav"></i></div>
+              <p class="price">€ 160</p><h3>BADBO 1.0</h3><p class="cat">Originals</p>
+            </article></div>
+
+
+            <div class="col-8 col-md-4 col-xl-3"><article class="product">
+              <div class="product__img"><img src="images/pagina/adizero-evo-sl.jpg" alt="Zapatillas Adizero Evo SL" class="w-100 h-100 object-fit-cover d-block"><i class="bi bi-heart fav"></i></div>
+              <p class="price">€ 150</p><h3>Zapatillas Adizero</h3><p class="cat">Performance</p>
+            </article></div>
+
+
+            <div class="col-8 col-md-4 col-xl-3"><article class="product">
+              <div class="product__img"><img src="images/pagina/sudadera-adisignature.jpg" alt="Sudadera con capucha adiSignature NY" class="w-100 h-100 object-fit-cover d-block"><i class="bi bi-heart fav"></i></div>
+              <p class="price">€ 85</p><h3>Sudadera Con Capucha AdiSignature NY</h3><p class="cat">Originals</p>
+            </article></div>
+          </div>
+        </div>
+
+
+
+        <div class="tab-pane tab-panel--prox">
+          <div class="row flex-nowrap overflow-auto g-2 carrusel">
+            <div class="col-8 col-md-4 col-xl-3"><article class="product">
+              <div class="product__img"><img src="images/pagina/chaleco-negro.jpg" alt="Chaleco acolchado para mascotas negro" class="w-100 h-100 object-fit-cover d-block"><i class="bi bi-heart fav"></i></div>
+              <p class="price">€ 55</p><h3>CHALECO ACOLCHADO PARA MASCOTAS</h3><p class="cat">Originals</p>
+            </article></div>
+            <div class="col-8 col-md-4 col-xl-3"><article class="product">
+              <div class="product__img"><img src="images/pagina/chaleco-verde.jpg" alt="Chaleco acolchado para mascotas verde" class="w-100 h-100 object-fit-cover d-block"><i class="bi bi-heart fav"></i></div>
+              <p class="price">€ 55</p><h3>CHALECO ACOLCHADO PARA MASCOTAS</h3><p class="cat">Originals</p>
+            </article></div>
+            <div class="col-8 col-md-4 col-xl-3"><article class="product">
+              <div class="product__img"><img src="images/pagina/chaleco-rojo.jpg" alt="Chaleco acolchado para mascotas rojo" class="w-100 h-100 object-fit-cover d-block"><i class="bi bi-heart fav"></i></div>
+              <p class="price">€ 55</p><h3>CHALECO ACOLCHADO PARA MASCOTAS</h3><p class="cat">Originals</p>
+            </article></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <section class="container-xxl seccion">
+      <h2 class="titulo-seccion">Descubre las novedades</h2>
+      <div class="row g-3">
+        <div class="col-6 col-md-4">
+          <a href="#" class="tarjeta-adidas borde-hover d-block position-relative overflow-hidden bg-light">
+            <img src="images/images adidas/Tracksuits_Discover_New_600x900_Copy_57218068c0.avif" alt="Personas con chándal" class="w-100 h-100 object-fit-cover">
+            <span class="btn-etiqueta position-absolute bottom-0 start-0 m-3">Chándales</span>
+          </a>
+        </div>
+
+
+        <div class="col-6 col-md-4">
+          <a href="#" class="tarjeta-adidas borde-hover d-block position-relative overflow-hidden bg-light">
+            <img src="images/images adidas/image_2026_09_04_12_14_03_042_Copy_2_ad048fd33d.avif" alt="Ropa de deportes de motor" class="w-100 h-100 object-fit-cover">
+            <span class="btn-etiqueta position-absolute bottom-0 start-0 m-3">Deportes de motor</span>
+          </a>
+        </div>
+
+
+        <div class="col-6 col-md-4">
+          <a href="#" class="tarjeta-adidas borde-hover d-block position-relative overflow-hidden bg-light">
+            <img src="images/images adidas/Rain_jacket_global_ss26_xperior_x_skychaser_q1_outdoor_ss26_launch_ka6960_xpr_25l_hyb_pk_jkt_women_banner_statement_1_d_3ff4236635.avif" alt="Chubasqueros" class="w-100 h-100 object-fit-cover">
+            <span class="btn-etiqueta position-absolute bottom-0 start-0 m-3">Chubasqueros</span>
+          </a>
+        </div>
+
+
+        <div class="col-6 col-md-4">
+          <a href="#" class="tarjeta-adidas borde-hover d-block position-relative overflow-hidden bg-light">
+            <img src="images/images adidas/global_ss26_summer_glow_20_originals_ss26_launch_hp_wglp_mglp_card_teaser_5_t_copy_Copy_6649557e01.avif" alt="Hombre con estilo urbano" class="w-100 h-100 object-fit-cover">
+            <span class="btn-etiqueta position-absolute bottom-0 start-0 m-3">Tendencias</span>
+          </a>
+        </div>
+
+        <div class="col-6 col-md-4">
+          <a href="#" class="tarjeta-adidas borde-hover d-block position-relative overflow-hidden bg-light">
+            <img src="images/images adidas/Training_Outfits_Discover_New_600x900_Copy_d77c59150e.avif" alt="Mujer con equipación de entrenamiento" class="w-100 h-100 object-fit-cover">
+            <span class="btn-etiqueta position-absolute bottom-0 start-0 m-3">Equipaciones de training</span>
+          </a>
+        </div>
+
+
+        <div class="col-6 col-md-4">
+          <a href="#" class="tarjeta-adidas borde-hover d-block position-relative overflow-hidden bg-light">
+            <img src="images/images adidas/Bags_Discover_New_600x900_Copy_97776178ab.avif" alt="Mujer con bolso azul" class="w-100 h-100 object-fit-cover">
+            <span class="btn-etiqueta position-absolute bottom-0 start-0 m-3">Bolsos</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="container-xxl seccion">
+      <div class="row g-2">
+        <div class="col-6 col-md-4"><a href="#" class="tile overflow-hidden"><img src="images/pagina/cat-blokecore.jpg" alt="Blokecore" class="w-100 h-100 object-fit-cover d-block"><span class="tile__label">Blokecore</span></a></div>
+        <div class="col-6 col-md-4"><a href="#" class="tile overflow-hidden"><img src="images/pagina/cat-senderismo.jpg" alt="Zapatillas senderismo" class="w-100 h-100 object-fit-cover d-block"><span class="tile__label">Zapatillas senderismo</span></a></div>
+        <div class="col-6 col-md-4"><a href="#" class="tile overflow-hidden"><img src="images/pagina/cat-chandales.jpg" alt="Chándales" class="w-100 h-100 object-fit-cover d-block"><span class="tile__label">Chándales</span></a></div>
+        <div class="col-6 col-md-4"><a href="#" class="tile overflow-hidden"><img src="images/pagina/cat-outdoor.jpg" alt="Outdoor" class="w-100 h-100 object-fit-cover d-block"><span class="tile__label">Outdoor</span></a></div>
+        <div class="col-6 col-md-4"><a href="#" class="tile overflow-hidden"><img src="images/pagina/cat-tendencias.jpg" alt="Tendencias" class="w-100 h-100 object-fit-cover d-block"><span class="tile__label">Tendencias</span></a></div>
+        <div class="col-6 col-md-4"><a href="#" class="tile overflow-hidden"><img src="images/pagina/cat-training.jpg" alt="Training" class="w-100 h-100 object-fit-cover d-block"><span class="tile__label">Training</span></a></div>
+      </div>
+    </section>
+
+
+
+    <section class="container-xxl seccion">
+      <h2 class="titulo-seccion">Descarga nuestras apps</h2>
+      <div class="row g-3">
+        <div class="col-6 col-md-3 col-lg-2">
+          <a href="#" class="tarjeta-app borde-hover d-flex justify-content-center align-items-center position-relative overflow-hidden" style="background-color: #000;">
+            <img src="images/images adidas/adidas_app_ac166d97d2.avif" alt="Logo adidas app">
+            <span class="btn-etiqueta position-absolute bottom-0 start-0 m-2">adidas app</span>
+          </a>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <a href="#" class="tarjeta-app borde-hover d-flex justify-content-center align-items-center position-relative overflow-hidden" style="background-color: #1736ff;">
+            <img src="images/images adidas/confirmed_app_8bf6139948.avif" alt="Logo CONFIRMED">
+            <span class="btn-etiqueta position-absolute bottom-0 start-0 m-2">CONFIRMED</span>
+          </a>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <a href="#" class="tarjeta-app borde-hover d-flex justify-content-center align-items-center position-relative overflow-hidden" style="background-color: #8cff8c;">
+            <img src="images/images adidas/Green_Logo_new_Copy_2_252d6aadb1.webp" alt="Logo adidas Running">
+            <span class="btn-etiqueta position-absolute bottom-0 start-0 m-2">adidas Running</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+
+
+    <section class="container-xxl seccion pb-5">
+      <div class="row gy-5 enlaces">
+        <div class="col-6 col-md-3 d-flex flex-column gap-3">
+          <h4>Tendencias</h4>
+          <a href="#">Zapatillas Running</a><a href="#">Ropa de Fútbol</a>
+          <a href="#">Calzado Gimnasio y Entrenamiento</a><a href="#">Ropa Gimnasio y Entrenamiento</a>
+        </div>
+        <div class="col-6 col-md-3 d-flex flex-column gap-3">
+          <h4>Zapatillas</h4>
+          <a href="#">Samba</a><a href="#">Gazelle</a><a href="#">Spezial</a><a href="#">Campus</a>
+        </div>
+        <div class="col-6 col-md-3 d-flex flex-column gap-3">
+          <h4>Ropa y accesorios</h4>
+          <a href="#">Sudaderas</a><a href="#">Chándales</a><a href="#">Mochilas</a><a href="#">Mallas</a>
+        </div>
+        <div class="col-6 col-md-3 d-flex flex-column gap-3">
+          <h4>Tecnologías</h4>
+          <a href="#">Boost</a><a href="#">Primeknit</a><a href="#">Cloudfoam</a><a href="#">Heat.RDY</a>
+        </div>
+      </div>
+    </section>
+
+
+
+    <section class="about bg-black text-white py-5 px-3">
+      <div class="mx-auto about__texto">
+        <h2 class="text-center mb-4">TIENDA DE DEPORTES ADIDAS:<br>RENDIMIENTO, ESTILO E INNOVACIÓN<br>DESDE 1949</h2>
+        <p>El deporte nos mantiene en forma. Nos mantiene alerta. Y nos une. Podemos cambiar vidas a través del deporte, ya sea con historias de atletas que nos inspiran, tecnologías innovadoras o ayudándote a mantener un estilo de vida activo.</p>
+        <p>Descubre ropa deportiva y diseños de alto rendimiento equipados con lo último en tecnología para ayudarte a superar tus límites. Nuestra tienda de deportes es el hogar de runners, baloncestistas, futbolistas y de quienes quieren tener un estilo de vida activo. Te ayudamos a entrenar más duro, correr más rápido y llegar más lejos con productos que acompañan tus movimientos y te ayudan a alcanzar tus objetivos.</p>
+        <p>Visita nuestra tienda online y descubre las nuevas colecciones adidas en las que innovación y estilo van de la mano. adidas ofrece equipaciones de alto rendimiento para todos los niveles, desde atletas de élite hasta apasionados de la actividad física o principiantes. Nuestra tienda en línea te garantiza que, estés donde estés, puedas acceder a nuevos productos diseñados para que sigas en movimiento.</p>
+        <p>La tienda de deportes adidas es mucho más que un lugar donde comprar tus artículos deportivos preferidos, es un espacio donde los creadores pueden progresar y redefinir los límites de lo posible. Todos nuestros productos se han diseñado con atención al detalle para ofrecerte rendimiento, durabilidad y que puedas moverte con total confianza. adidas colabora con los mejores talentos de la industria para crear prendas que favorezcan el movimiento, la expresión personal y un estilo de vida activo. Nuestra tienda de deportes dispone de todo lo que necesitas en tu camino hacia la grandeza.</p>
+        <div class="text-center mt-5">
+          <img src="images/logoadidas.jpg" alt="adidas" class="about__logo">
+        </div>
+      </div>
+    </section>
+
+
+
+    <section class="club d-flex flex-column flex-md-row align-items-center justify-content-center gap-4 text-center text-md-start">
+      <h2 class="mb-0">ÚNETE AL CLUB Y GANA 250 PUNTOS PARA CANJEAR POR RECOMPENSAS</h2>
+      <a href="#" class="btn-adidas text-nowrap">SUSCRÍBETE GRATIS <i class="bi bi-arrow-right"></i></a>
+    </section>
+  </main>
+
+  <footer class="footer bg-black text-white">
+    <div class="container-xxl py-5">
+      <div class="row gy-5">
+        <div class="col-6 col-md-3 col-xl footer__col">
+          <h4>Productos</h4>
+          <a href="#">Calzado</a><a href="#">Ropa</a><a href="#">Accesorios</a><a href="#">Novedades</a>
+          <a href="#">Fechas de lanzamiento</a><a href="#">Outlet</a>
+        </div>
+
+
+        <div class="col-6 col-md-3 col-xl footer__col">
+          <h4>Deportes</h4>
+          <a href="#">Football</a><a href="#">Baloncesto</a><a href="#">Golf</a><a href="#">Gimnasio y Training</a>
+          <a href="#">Outdoor</a><a href="#">Rugby</a><a href="#">Running</a><a href="#">Tenis</a>
+        </div>
+
+
+        <div class="col-6 col-md-3 col-xl footer__col">
+          <h4>Colecciones</h4>
+          <a href="#">Originals</a><a href="#">Spezial</a><a href="#">SL72</a><a href="#">Campus</a>
+          <a href="#">Adizero</a><a href="#">Samba</a><a href="#">Gazelle</a><a href="#">adicolor</a>
+        </div>
+
+
+        <div class="col-6 col-md-3 col-xl footer__col">
+          <h4>Nuestro mundo</h4>
+          <a href="#">Nuestro impacto</a><a href="#">Por las personas</a><a href="#">Por el planeta</a>
+          <h4 class="mt-4">Más sobre adidas</h4>
+          <a href="#">Equipaciones de training</a>
+        </div>
+
+
+        <div class="col-6 col-md-3 col-xl footer__col">
+          <h4>Soporte</h4>
+          <a href="#">Ayuda</a><a href="#">Devoluciones y reembolsos</a><a href="#">Desistimiento del contrato</a>
+          <a href="#">Envío</a><a href="#">Guía de tallas</a><a href="#">Buscador de tiendas</a><a href="#">Mapa del sitio</a>
+          <a href="#">Descuento Para Estudiantes</a><a href="#">Tarjetas regalo</a><a href="#">Resolución de conflictos</a>
+          <a href="#">Nuestros datos</a><a href="#">Canal ético</a>
+        </div>
+
+
+        <div class="col-6 col-md-3 col-xl footer__col">
+          <h4>Información de la empresa</h4>
+          <a href="#">Acerca de nosotros</a><a href="#">Empleo</a><a href="#">Prensa</a><a href="#">App adidas</a>
+          <a href="#">adidas CONFIRMED</a><a href="#">App adidas Running</a><a href="#">Blog de adidas</a>
+          <a href="#">adidas News</a><a href="#">Selector de ubicación</a><a href="#">adiclub</a>
+          <a href="#">Equipaciones para tu club</a><a href="#">Derechos de garantía legal</a>
+        </div>
+
+
+        <div class="col-6 col-md-3 col-xl-1 footer__col">
+          <h4>Síguenos</h4>
+          <div class="d-flex flex-row flex-xl-column flex-wrap gap-3 redes">
+            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" aria-label="X"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" aria-label="Pinterest"><i class="bi bi-pinterest"></i></a>
+            <a href="#" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+            <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="footer__legal border-top py-4">
+      <ul class="list-unstyled d-flex flex-wrap justify-content-center mb-0 px-3">
+        <li><a href="#">Configuración de las cookies</a></li>
+        <li><a href="#">Gestionar Datos</a></li>
+        <li><a href="#">Cookies</a></li>
+        <li><a href="#">Aviso de privacidad</a></li>
+        <li><a href="#">Condiciones legales</a></li>
+        <li><a href="#">Accesibilidad</a></li>
+      </ul>
+    </div>
+  </footer>
+
+
+</body>
+</html>
