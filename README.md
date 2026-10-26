@@ -1,4 +1,3 @@
-[README.md](https://github.com/user-attachments/files/33653564/README.md)
 # Recreación de adidas.es con Bootstrap
 
 Recreación de la portada de [adidas.es](https://www.adidas.es) hecha con **HTML, CSS y Bootstrap 5**, sin nada de JavaScript.
