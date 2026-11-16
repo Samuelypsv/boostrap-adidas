@@ -1,0 +1,215 @@
+/* ==========================================================================
+   contratacion.css
+   Estilos del formulario. Reutiliza las variables y fuentes de styles.css
+   (--negro, --blanco, --gris, --claro, Barlow / Barlow Condensed).
+   ========================================================================== */
+
+:root {
+  --error: #b3141e;        /* rojo oscuro: contraste suficiente sobre blanco */
+  --error-fondo: #fdf1f1;
+  --borde: #d3d7da;
+}
+
+.saltar-contenido { position: absolute; z-index: 2000; background: var(--negro); color: var(--blanco); padding: 8px 12px; }
+
+.contratacion { padding-top: 48px; padding-bottom: 80px; }
+
+.titulo-contratacion,
+.titulo-paso,
+.titulo-resumen {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+.titulo-contratacion { font-size: 44px; line-height: 1; margin-bottom: 12px; }
+.titulo-paso { font-size: 28px; margin-bottom: 8px; float: none; width: 100%; }
+.titulo-paso:focus { outline: none; }
+.titulo-resumen { font-size: 22px; margin-bottom: 16px; }
+
+.link-adidas--sm { font-size: 15px; }
+
+
+/* ---------- Pasos y barra de progreso ---------- */
+
+.pasos { gap: 4px; overflow-x: auto; }
+.pasos li { flex: 1 1 0; min-width: 0; }
+
+.paso-btn {
+  width: 100%;
+  display: flex; align-items: center; gap: 8px;
+  background: none; border: none; border-bottom: 3px solid var(--borde);
+  padding: 8px 2px; text-align: left;
+  font-weight: 700; font-size: 14px; color: var(--negro);
+}
+.paso-num {
+  flex: none;
+  width: 24px; height: 24px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border: 1px solid var(--negro); font-size: 12px;
+}
+.paso-nombre { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+.paso-btn[aria-current="step"] { border-bottom-color: var(--negro); }
+.paso-btn[aria-current="step"] .paso-num,
+.paso-btn.is-hecho .paso-num { background: var(--negro); color: var(--blanco); }
+.paso-btn:disabled { color: var(--gris); cursor: not-allowed; }
+.paso-btn:disabled .paso-num { border-color: var(--borde); }
+.paso-btn:not(:disabled):hover .paso-nombre { text-decoration: underline; }
+
+.progreso { height: 3px; border-radius: 0; background: var(--claro); }
+.progreso .progress-bar { background: var(--negro); transition: width .3s ease; }
+
+@media (max-width: 767.98px) {
+  .paso-nombre { display: none; }          /* en móvil solo el número */
+  .paso-btn { justify-content: center; }
+  .titulo-contratacion { font-size: 32px; }
+  .titulo-paso { font-size: 22px; }
+}
+
+
+/* ---------- Foco visible para teclado ---------- */
+
+.paso-btn:focus-visible,
+.btn-form:focus-visible,
+.link-adidas:focus-visible,
+.resumen-errores a:focus-visible,
+.form-check-input:focus-visible {
+  outline: 2px solid var(--negro);
+  outline-offset: 2px;
+  box-shadow: none;
+}
+
+.form-control,
+.form-select { border-radius: 0; border-color: #8c8c8c; padding: 10px 12px; }
+.form-control:focus,
+.form-select:focus,
+.form-check-input:focus { border-color: var(--negro); box-shadow: 0 0 0 2px rgba(0, 0, 0, .25); }
+
+.form-label { font-weight: 600; margin-bottom: 4px; }
+.form-check-input { border-color: var(--negro); border-radius: 0; }
+.form-check-input[type="radio"] { border-radius: 50%; }
+.form-check-input:checked { background-color: var(--negro); border-color: var(--negro); }
+
+
+/* ---------- Cards de planes (paso 1) ---------- */
+
+.plan-card {
+  display: flex; flex-direction: column; gap: 12px;
+  padding: 20px;
+  border: 1px solid var(--borde);
+  cursor: pointer;
+  transition: border-color .15s;
+}
+.plan-card:hover { border-color: var(--negro); }
+.plan-card__cabecera { display: flex; align-items: center; gap: 10px; }
+.plan-card__cabecera .form-check-input { margin: 0; flex: none; }
+.plan-card__nombre { font-weight: 700; font-size: 18px; text-transform: uppercase; }
+.plan-card__precio { font-family: "Barlow Condensed", sans-serif; font-weight: 700; font-size: 34px; line-height: 1; }
+.plan-card__precio small { font-family: "Barlow", sans-serif; font-weight: 400; font-size: 15px; }
+.plan-card__lista { margin: 0; padding-left: 18px; font-size: 15px; line-height: 1.5; }
+.plan-card__elegido { display: none; margin-top: auto; font-weight: 700; font-size: 14px; text-transform: uppercase; }
+
+/* Estado elegido: borde grueso + texto "Plan elegido" (no solo color) */
+.plan-card:has(input:checked) { border: 2px solid var(--negro); padding: 19px; background: #fafafa; }
+.plan-card:has(input:checked) .plan-card__elegido { display: block; }
+.plan-card:has(input:focus-visible) { outline: 2px solid var(--negro); outline-offset: 3px; }
+.plan-card:has(input.is-invalid) { border-color: var(--error); }
+
+
+/* ---------- Complementos (paso 2) y método de pago (paso 5) ---------- */
+
+.complemento,
+.metodo {
+  display: flex; align-items: flex-start; gap: 14px;
+  padding: 16px 18px;
+  border: 1px solid var(--borde);
+  cursor: pointer;
+}
+.complemento:hover, .metodo:hover { border-color: var(--negro); }
+.complemento .form-check-input, .metodo .form-check-input { flex: none; margin-top: 3px; }
+.complemento__texto { flex: 1; }
+.complemento__precio { font-weight: 700; text-align: right; white-space: nowrap; }
+.complemento__precio small { font-weight: 400; color: var(--gris); }
+.complemento:has(input:checked),
+.metodo:has(input:checked) { border: 2px solid var(--negro); padding: 15px 17px; }
+.complemento:has(input:focus-visible),
+.metodo:has(input:focus-visible) { outline: 2px solid var(--negro); outline-offset: 3px; }
+.complemento:has(input.is-invalid),
+.metodo:has(input.is-invalid) { border-color: var(--error); }
+
+.metodo { flex: 1; align-items: center; font-weight: 600; }
+.metodo .bi { font-size: 20px; }
+.bloque-pago legend { float: none; }
+
+
+/* ---------- Avisos ---------- */
+
+.aviso { border-left: 3px solid var(--negro); background: var(--claro); padding: 10px 14px; font-size: 15px; }
+.aviso:not(.aviso--info) { border-left-color: var(--error); background: var(--error-fondo); }
+
+
+/* ---------- Errores ---------- */
+
+.mensaje-error {
+  margin-top: 6px;
+  color: var(--error);
+  font-size: 14px; font-weight: 600;
+}
+.mensaje-error:not([hidden]) { display: block; }
+
+.form-control.is-invalid,
+.form-select.is-invalid { border-color: var(--error); border-width: 2px; }
+
+.resumen-errores {
+  border: 2px solid var(--error);
+  background: var(--error-fondo);
+  padding: 16px 20px;
+}
+.resumen-errores:focus { outline: none; }
+.resumen-errores ul { padding-left: 18px; }
+.resumen-errores a { color: var(--error); text-decoration: underline; font-weight: 600; }
+
+
+/* ---------- Revisión (paso 6) ---------- */
+
+.bloque-revision { border-top: 1px solid var(--borde); padding: 16px 0; }
+.tabla-desglose th, .tabla-desglose td { padding: 8px 4px; }
+.tabla-desglose tfoot th, .tabla-desglose tfoot td { border-bottom: none; }
+.legal { border-top: 1px solid var(--negro); padding-top: 20px; }
+.legal a { text-decoration: underline; }
+
+
+/* ---------- Botones (mismo estilo que .btn-adidas, en negro) ---------- */
+
+.btn-form {
+  display: inline-flex; align-items: center; gap: 14px;
+  background: var(--negro); color: var(--blanco);
+  border: 1px solid var(--negro);
+  font-weight: 700; font-size: 16px; text-transform: uppercase; letter-spacing: .04em;
+  padding: 12px 18px;
+  box-shadow: 4px 4px 0 -1px var(--blanco), 4px 4px 0 0 var(--negro);
+  transition: color .15s;
+}
+.btn-form:hover { color: #c4c4c4; }
+.btn-form--secundario { background: var(--blanco); color: var(--negro); box-shadow: none; }
+.btn-form--secundario:hover { color: var(--gris); }
+
+
+/* ---------- Resumen lateral ---------- */
+
+.resumen-pedido { border: 1px solid var(--borde); padding: 24px; position: sticky; top: calc(var(--header-h) + 24px); }
+.resumen-lineas li { display: flex; justify-content: space-between; gap: 12px; padding: 6px 0; font-size: 15px; }
+.resumen-totales { border-top: 1px solid var(--negro); padding-top: 12px; }
+.resumen-totales div { display: flex; justify-content: space-between; align-items: baseline; padding: 4px 0; }
+.resumen-totales dt { font-weight: 600; }
+.resumen-totales dd { margin: 0; font-family: "Barlow Condensed", sans-serif; font-weight: 700; font-size: 24px; }
+.resumen-totales dd small { font-family: "Barlow", sans-serif; font-size: 14px; font-weight: 400; }
+
+@media (max-width: 991.98px) {
+  .resumen-pedido { position: static; }
+}
+
+/* Botones "Editar" de la revisión: negros como los enlaces de la home */
+.bloque-revision .btn-link { color: var(--negro); font-size: 15px; font-weight: 700; text-decoration: underline; text-underline-offset: 4px; }
+.bloque-revision .btn-link:hover { background: var(--negro); color: var(--blanco); }
