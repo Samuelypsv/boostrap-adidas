@@ -76,6 +76,76 @@ Las partes que normalmente necesitan JavaScript están resueltas con CSS:
 - **Megamenú de Promoción:** aparece con `:hover`.
 - **Carruseles:** filas que se deslizan de lado con `overflow-auto` y `scroll-snap`.
 
+---
+
+# Práctica 2 · Formulario de contratación adiClub
+
+Desde la home, el botón **«Únete a adiClub»** (en la franja verde del club) y el enlace **«únete al club»** de arriba llevan a `contratacion.html`. Ahí se contrata una suscripción **adiClub** en 6 pasos. Es una **simulación**: no hay servidor ni se cobra nada.
+
+| Ordenador | Móvil |
+|---|---|
+| ![Paso 1 en ordenador](capturas/practica2/00-paso1-escritorio.png) | ![Paso 1 en móvil](capturas/practica2/07-movil-paso1.png) |
+
+## Cómo ejecutarlo
+
+1. Abre `index.html` en el navegador (o usa *Live Server* en VS Code).
+2. Pulsa **«Únete a adiClub»** y completa los pasos.
+3. Al confirmar, vuelves a la home y se abre el modal «Solicitud registrada correctamente».
+
+Hace falta internet para Bootstrap y las fuentes. El modal se basa en `sessionStorage`, así que funciona igual abriendo el archivo directamente o con un servidor.
+
+## Escenario
+
+| Paso | Qué hay |
+|---|---|
+| 1. Plan | 3 cards: Básico 4,99 €/mes · Plus 9,99 €/mes · Pro 14,99 €/mes. Solo se elige uno (radio) |
+| 2. Complementos | Kit de bienvenida 24,95 € (pago único) · Dorsal 12,00 € (pago único) · Envío exprés 2,99 €/mes. **Regla:** el envío exprés no se puede añadir al plan Pro, porque ya lo incluye |
+| 3. Datos | Nombre, apellidos, DNI, fecha de nacimiento (18 años o más), correo y confirmación, teléfono |
+| 4. Dirección | Solo España. El código postal tiene que coincidir con la provincia |
+| 5. Pago | Domiciliación (titular + IBAN) o tarjeta simulada (titular, número, MM/AA, CVV) |
+| 6. Revisión | Resumen con «Editar», desglose y casillas legales |
+
+Los **pagos únicos** y la **cuota mensual** se suman por separado y nunca se mezclan en un único total.
+
+## Datos ficticios para probar
+
+| Campo | Válido | No válido |
+|---|---|---|
+| DNI | `12345678Z` | `12345678A` |
+| Teléfono | `+34 612 34 56 78` | `512345678` |
+| Fecha de nacimiento | `12/04/1995` | una fecha de hace menos de 18 años |
+| Código postal | `37002` + Salamanca | `28013` + Salamanca |
+| IBAN | `ES91 2100 0418 4502 0005 1332` | `ES91 2100 0418 4502 0005 1333` |
+| Tarjeta | `4111 1111 1111 1111` · `12/29` · `123` | `4111 1111 1111 1112` · `01/24` · `12` |
+
+## Archivos nuevos
+
+```
+├── contratacion.html        → los 6 pasos del formulario (con novalidate)
+├── css/contratacion.css     → estilos del formulario (usa las variables de styles.css)
+├── js/datos.js              → planes, complementos y provincias (precios en céntimos)
+├── js/validaciones.js       → REGLAS: funciones que devuelven el mensaje de error o ""
+├── js/errores.js            → PRESENTACIÓN: mensajes, aria-invalid, aria-describedby, resumen
+├── js/formulario.js         → NAVEGACIÓN y estado: pasos, precios, revisión, confirmar
+├── js/home.js               → abre el modal de éxito una sola vez en la home
+├── tests/                   → pruebas automáticas
+└── PRUEBAS.md               → tabla de las 12 pruebas
+```
+
+En `index.html` solo se han cambiado los dos enlaces al formulario y se han añadido el modal y los scripts. En `styles.css` se han añadido unas líneas al final para el modal.
+
+## Cómo funciona (resumido)
+
+- **Pasos:** cada paso es un `<fieldset>`. Se cambia de paso poniendo o quitando `hidden`, así que lo escrito no se borra.
+- **Siguiente** valida solo el paso actual. **Anterior** no valida nada. A un paso más adelante solo se puede ir si los anteriores están bien.
+- **Lista `CAMPOS`** (en `formulario.js`): cada campo dice en qué paso está y qué regla usa. Va en orden de pantalla, y por eso el primer error siempre es el de más arriba.
+- **Errores:** junto a cada campo hay icono y texto, y además `aria-invalid` y `aria-describedby`. Arriba sale un resumen con enlaces que abren el paso del campo y lo enfocan.
+- **Confirmar** vuelve a validar los 6 pasos y recalcula los precios. Si todo está bien, guarda una marca en `sessionStorage` y va a `index.html`. `home.js` borra la marca y abre el modal; por eso al recargar ya no sale.
+
+## Planificación y uso de IA
+
+Tablero en Jira (proyecto SCRUM, épica *SCRUM-6*, tareas *SCRUM-7* a *SCRUM-17*) con las columnas Pendiente, En curso, En pruebas y Hecho. Cada tarea lleva su objetivo, su criterio de aceptación, la IA usada (Claude), el prompt en formato EARS y la prueba realizada.
+
 ## Autor
 
 Samuel · [@Samuelypsv](https://github.com/Samuelypsv)
