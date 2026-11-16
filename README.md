@@ -129,7 +129,8 @@ Los **pagos únicos** y la **cuota mensual** se suman por separado y nunca se me
 ├── js/formulario.js         → NAVEGACIÓN y estado: pasos, precios, revisión, confirmar
 ├── js/home.js               → abre el modal de éxito una sola vez en la home
 ├── tests/                   → pruebas automáticas
-└── PRUEBAS.md               → tabla de las 12 pruebas
+├── PRUEBAS.md               → tabla de las 12 pruebas
+└── TABLERO.md               → exportación del tablero de Jira con la documentación por tarea
 ```
 
 En `index.html` solo se han cambiado los dos enlaces al formulario y se han añadido el modal y los scripts. En `styles.css` se han añadido unas líneas al final para el modal.
@@ -145,6 +146,8 @@ En `index.html` solo se han cambiado los dos enlaces al formulario y se han aña
 ## Planificación y uso de IA
 
 Tablero en Jira (proyecto SCRUM, épica *SCRUM-6*, tareas *SCRUM-7* a *SCRUM-17*) con las columnas Pendiente, En curso, En pruebas y Hecho. Cada tarea lleva su objetivo, su criterio de aceptación, la IA usada (Claude), el prompt en formato EARS y la prueba realizada.
+
+La exportación del tablero, con las decisiones tomadas en cada tarea y los enlaces a los commits, está en [`TABLERO.md`](TABLERO.md). La tabla de las 12 pruebas está en [`PRUEBAS.md`](PRUEBAS.md).
 
 ## Autor
 
