@@ -381,3 +381,13 @@ a:hover > .btn-etiqueta { border-color: var(--negro); }
   .club h2 { font-size: 18px; }
   .footer .row > .footer__col { padding-right: 8px; }
 }
+
+
+/* ---------- Práctica 2: modal de éxito al volver del formulario ---------- */
+.btn-adidas--negro { background: var(--negro); color: var(--blanco); border: 1px solid var(--negro); }
+.btn-adidas--negro:hover { color: #c4c4c4; }
+.modal-exito .modal-title {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700; font-size: 28px;
+  text-transform: uppercase; letter-spacing: .06em; line-height: 1.1;
+}
