@@ -393,6 +393,14 @@ function pintarRevision() {
 function confirmar(evento) {
   evento.preventDefault();          // nunca dejamos que el navegador envíe solo
 
+  // Pulsar Intro dentro de un campo envía el formulario aunque el botón Confirmar esté oculto.
+  // Si todavía no estamos en la revisión, Intro hace lo mismo que «Siguiente»:
+  // valida solo el paso actual y no saca errores de pasos que aún no se han visto.
+  if (estado.pasoActual !== TOTAL_PASOS) {
+    siguiente();
+    return;
+  }
+
   // Volvemos a validar TODO y recalculamos el total
   pintarResumenPedido();
   const errores = validarPasos(1, TOTAL_PASOS);
