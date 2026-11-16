@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Copia de prueba sin validación HTML | adiClub</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&family=Barlow:wght@400;500;600;700&family=Oswald:wght@700&display=swap" rel="stylesheet">
+
+  <link href="styles.css" rel="stylesheet">
+  <link href="css/contratacion.css" rel="stylesheet">
+</head>
+
+<body>
+  <a href="#form-contratacion" class="visually-hidden-focusable saltar-contenido">Saltar al formulario</a>
+
+  <div class="usp-bar text-center py-1 small">COPIA DE PRUEBA sin atributos HTML de validación · Aquí solo valida JavaScript</div>
+
+  <header class="header sticky-top bg-white border-bottom">
+    <div class="container-fluid px-3 px-lg-5">
+      <div class="d-flex align-items-center justify-content-between header-bar">
+        <a href="index.html" class="logo" aria-label="adidas, volver a la página de inicio">
+          <img src="images/logoadidas.jpg" alt="adidas">
+        </a>
+        <a href="index.html" class="link-adidas link-adidas--sm"><i class="bi bi-arrow-left" aria-hidden="true"></i> Volver a la tienda</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container-xxl contratacion">
+    <h1 class="titulo-contratacion">Únete a adiClub</h1>
+    <p class="text-muted mb-4">Elige tu plan y completa la solicitud en 6 pasos. Los campos con <span aria-hidden="true">*</span><span class="visually-hidden">asterisco</span> son obligatorios.</p>
+
+    <!-- Progreso: botones de los pasos + barra -->
+    <nav aria-label="Pasos de la solicitud" class="mb-4">
+      <ol class="pasos list-unstyled d-flex mb-2" id="lista-pasos">
+        <li><button type="button" class="paso-btn" data-ir="1"><span class="paso-num">1</span><span class="paso-nombre">Plan</span></button></li>
+        <li><button type="button" class="paso-btn" data-ir="2"><span class="paso-num">2</span><span class="paso-nombre">Complementos</span></button></li>
+        <li><button type="button" class="paso-btn" data-ir="3"><span class="paso-num">3</span><span class="paso-nombre">Datos</span></button></li>
+        <li><button type="button" class="paso-btn" data-ir="4"><span class="paso-num">4</span><span class="paso-nombre">Dirección</span></button></li>
+        <li><button type="button" class="paso-btn" data-ir="5"><span class="paso-num">5</span><span class="paso-nombre">Pago</span></button></li>
+        <li><button type="button" class="paso-btn" data-ir="6"><span class="paso-num">6</span><span class="paso-nombre">Revisión</span></button></li>
+      </ol>
+      <div class="progress progreso" role="progressbar" aria-label="Progreso de la solicitud" aria-valuemin="0" aria-valuemax="100" aria-valuenow="17" id="barra-progreso">
+        <div class="progress-bar" style="width: 17%"></div>
+      </div>
+      <p class="small mt-2 mb-0" id="texto-paso" aria-live="polite">Paso 1 de 6 · Plan</p>
+    </nav>
+
+    
+    <div id="resumen-errores" class="resumen-errores mb-4" role="alert" tabindex="-1" hidden>
+      <h2 class="h6 fw-bold mb-2" id="resumen-errores-titulo"></h2>
+      <ul class="mb-0" id="resumen-errores-lista"></ul>
+    </div>
+
+    <div class="row g-4 g-lg-5">
+      <div class="col-lg-8">
+        <form id="form-contratacion" novalidate>
+
+          
+          <fieldset class="paso" id="paso-1" data-paso="1">
+            <legend class="titulo-paso" tabindex="-1">1. Elige tu plan</legend>
+            <p class="text-muted">Todos los planes son cuotas mensuales. Puedes darte de baja cuando quieras.</p>
+
+            <div class="row g-3" role="radiogroup" aria-labelledby="paso-1-leyenda" aria-required="true">
+              <span id="paso-1-leyenda" class="visually-hidden">Plan adiClub</span>
+
+              <div class="col-md-4">
+                <label class="plan-card h-100" for="plan-basico">
+                  <span class="plan-card__cabecera">
+                    <input class="form-check-input" type="radio" name="plan" id="plan-basico" value="basico" aria-describedby="plan-error">
+                    <span class="plan-card__nombre">adiClub Básico</span>
+                  </span>
+                  <span class="plan-card__precio">4,99 € <small>/ mes</small></span>
+                  <ul class="plan-card__lista">
+                    <li>5 % de descuento en cada compra</li>
+                    <li>Acceso anticipado a rebajas</li>
+                    <li>Envío estándar gratis desde 50 €</li>
+                  </ul>
+                  <span class="plan-card__elegido"><i class="bi bi-check-lg" aria-hidden="true"></i> Plan elegido</span>
+                </label>
+              </div>
+
+              <div class="col-md-4">
+                <label class="plan-card h-100" for="plan-plus">
+                  <span class="plan-card__cabecera">
+                    <input class="form-check-input" type="radio" name="plan" id="plan-plus" value="plus" aria-describedby="plan-error">
+                    <span class="plan-card__nombre">adiClub Plus</span>
+                  </span>
+                  <span class="plan-card__precio">9,99 € <small>/ mes</small></span>
+                  <ul class="plan-card__lista">
+                    <li>10 % de descuento en cada compra</li>
+                    <li>Acceso anticipado a lanzamientos</li>
+                    <li>Envío estándar siempre gratis</li>
+                  </ul>
+                  <span class="plan-card__elegido"><i class="bi bi-check-lg" aria-hidden="true"></i> Plan elegido</span>
+                </label>
+              </div>
+
+              <div class="col-md-4">
+                <label class="plan-card h-100" for="plan-pro">
+                  <span class="plan-card__cabecera">
+                    <input class="form-check-input" type="radio" name="plan" id="plan-pro" value="pro" aria-describedby="plan-error">
+                    <span class="plan-card__nombre">adiClub Pro</span>
+                  </span>
+                  <span class="plan-card__precio">14,99 € <small>/ mes</small></span>
+                  <ul class="plan-card__lista">
+                    <li>15 % de descuento en cada compra</li>
+                    <li>Reserva de lanzamientos CONFIRMED</li>
+                    <li>Envío exprés ilimitado incluido</li>
+                  </ul>
+                  <span class="plan-card__elegido"><i class="bi bi-check-lg" aria-hidden="true"></i> Plan elegido</span>
+                </label>
+              </div>
+            </div>
+            <div class="mensaje-error" id="plan-error" hidden></div>
+            <div class="aviso mt-3" id="aviso-plan" role="status" hidden></div>
+          </fieldset>
+
+        
+          <fieldset class="paso" id="paso-2" data-paso="2" hidden>
+            <legend class="titulo-paso" tabindex="-1">2. Añade complementos</legend>
+            <p class="text-muted">Son opcionales: puedes elegir ninguno, uno o varios.</p>
+
+            <div class="d-flex flex-column gap-3">
+              <label class="complemento" for="comp-kit">
+                <input class="form-check-input" type="checkbox" name="complemento" id="comp-kit" value="kit" aria-describedby="complementos-error">
+                <span class="complemento__texto">
+                  <span class="fw-bold">Kit de bienvenida</span>
+                  <span class="d-block text-muted small">Camiseta y bolsa de deporte adiClub.</span>
+                </span>
+                <span class="complemento__precio">24,95 € <small class="d-block">pago único</small></span>
+              </label>
+
+              <label class="complemento" for="comp-dorsal">
+                <input class="form-check-input" type="checkbox" name="complemento" id="comp-dorsal" value="dorsal" aria-describedby="complementos-error">
+                <span class="complemento__texto">
+                  <span class="fw-bold">Personalización con dorsal</span>
+                  <span class="d-block text-muted small">Tu nombre y número en una camiseta del kit.</span>
+                </span>
+                <span class="complemento__precio">12,00 € <small class="d-block">pago único</small></span>
+              </label>
+
+              <label class="complemento" for="comp-envio">
+                <input class="form-check-input" type="checkbox" name="complemento" id="comp-envio" value="envio" aria-describedby="envio-nota complementos-error">
+                <span class="complemento__texto">
+                  <span class="fw-bold">Envío exprés ilimitado</span>
+                  <span class="d-block text-muted small">Pedidos en 24 h sin coste.</span>
+                  <span class="d-block small mt-1" id="envio-nota"><i class="bi bi-info-circle" aria-hidden="true"></i> No compatible con el plan Pro, porque ya lo incluye.</span>
+                </span>
+                <span class="complemento__precio">2,99 € <small class="d-block">al mes</small></span>
+              </label>
+            </div>
+            <div class="mensaje-error" id="complementos-error" hidden></div>
+          </fieldset>
+
+        
+          <fieldset class="paso" id="paso-3" data-paso="3" hidden>
+            <legend class="titulo-paso" tabindex="-1">3. Datos personales</legend>
+            <p class="text-muted">Para contratar debes ser mayor de 18 años.</p>
+
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label for="nombre" class="form-label">Nombre *</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" autocomplete="given-name">
+                <div class="mensaje-error" id="nombre-error" hidden></div>
+              </div>
+              <div class="col-md-6">
+                <label for="apellidos" class="form-label">Apellidos *</label>
+                <input type="text" class="form-control" id="apellidos" name="apellidos" autocomplete="family-name">
+                <div class="mensaje-error" id="apellidos-error" hidden></div>
+              </div>
+              <div class="col-md-6">
+                <label for="dni" class="form-label">DNI *</label>
+                <input type="text" class="form-control" id="dni" name="dni" aria-describedby="dni-ayuda">
+                <div class="form-text" id="dni-ayuda">8 cifras y la letra. Ejemplo: 12345678Z</div>
+                <div class="mensaje-error" id="dni-error" hidden></div>
+              </div>
+              <div class="col-md-6">
+                <label for="nacimiento" class="form-label">Fecha de nacimiento *</label>
+                <input type="date" class="form-control" id="nacimiento" name="nacimiento" autocomplete="bday">
+                <div class="mensaje-error" id="nacimiento-error" hidden></div>
+              </div>
+              <div class="col-md-6">
+                <label for="email" class="form-label">Correo electrónico *</label>
+                <input type="text" class="form-control" id="email" name="email" autocomplete="email">
+                <div class="mensaje-error" id="email-error" hidden></div>
+              </div>
+              <div class="col-md-6">
+                <label for="email2" class="form-label">Repite el correo electrónico *</label>
+                <input type="text" class="form-control" id="email2" name="email2" autocomplete="off">
+                <div class="mensaje-error" id="email2-error" hidden></div>
+              </div>
+              <div class="col-md-6">
+                <label for="telefono" class="form-label">Teléfono *</label>
+                <input type="text" class="form-control" id="telefono" name="telefono" autocomplete="tel" aria-describedby="telefono-ayuda">
+                <div class="form-text" id="telefono-ayuda">Número español. Puedes poner +34 y espacios.</div>
+                <div class="mensaje-error" id="telefono-error" hidden></div>
+              </div>
+            </div>
+          </fieldset>
+
+        
+          <fieldset class="paso" id="paso-4" data-paso="4" hidden>
+            <legend class="titulo-paso" tabindex="-1">4. Dirección</legend>
+            <p class="aviso aviso--info"><i class="bi bi-geo-alt" aria-hidden="true"></i> Solo aceptamos direcciones de <strong>España</strong>.</p>
+
+            <div class="row g-3">
+              <div class="col-md-4">
+                <label for="tipo-via" class="form-label">Tipo de vía *</label>
+                <select class="form-select" id="tipo-via" name="tipo-via">
+                  <option value="">Elige…</option>
+                  <option>Calle</option><option>Avenida</option><option>Plaza</option><option>Paseo</option>
+                  <option>Camino</option><option>Carretera</option><option>Ronda</option><option>Travesía</option>
+                </select>
+                <div class="mensaje-error" id="tipo-via-error" hidden></div>
+              </div>
+              <div class="col-md-8">
+                <label for="nombre-via" class="form-label">Nombre de la vía *</label>
+                <input type="text" class="form-control" id="nombre-via" name="nombre-via" autocomplete="address-line1">
+                <div class="mensaje-error" id="nombre-via-error" hidden></div>
+              </div>
+              <div class="col-6 col-md-4">
+                <label for="numero" class="form-label">Número *</label>
+                <input type="text" class="form-control" id="numero" name="numero" aria-describedby="numero-ayuda">
+                <div class="form-text" id="numero-ayuda">Escribe S/N si no tiene.</div>
+                <div class="mensaje-error" id="numero-error" hidden></div>
+              </div>
+              <div class="col-6 col-md-4">
+                <label for="piso" class="form-label">Piso y puerta <span class="text-muted">(opcional)</span></label>
+                <input type="text" class="form-control" id="piso" name="piso" autocomplete="address-line2">
+              </div>
+              <div class="col-md-4">
+                <label for="cp" class="form-label">Código postal *</label>
+                <input type="text" class="form-control" id="cp" name="cp" inputmode="numeric" autocomplete="postal-code">
+                <div class="mensaje-error" id="cp-error" hidden></div>
+              </div>
+              <div class="col-md-6">
+                <label for="localidad" class="form-label">Localidad *</label>
+                <input type="text" class="form-control" id="localidad" name="localidad" autocomplete="address-level2">
+                <div class="mensaje-error" id="localidad-error" hidden></div>
+              </div>
+              <div class="col-md-6">
+                <label for="provincia" class="form-label">Provincia *</label>
+                <select class="form-select" id="provincia" name="provincia">
+                  <option value="">Elige…</option>
+                  
+                </select>
+                <div class="mensaje-error" id="provincia-error" hidden></div>
+              </div>
+            </div>
+          </fieldset>
+
+         
+          <fieldset class="paso" id="paso-5" data-paso="5" hidden>
+            <legend class="titulo-paso" tabindex="-1">5. Pago</legend>
+            <p class="aviso aviso--info"><i class="bi bi-shield-check" aria-hidden="true"></i> Es una simulación: usa datos ficticios. No se hace ningún cobro.</p>
+
+            <div class="d-flex flex-column flex-sm-row gap-3 mb-1" role="radiogroup" aria-label="Método de pago" aria-required="true">
+              <label class="metodo" for="pago-domiciliacion">
+                <input class="form-check-input" type="radio" name="metodo-pago" id="pago-domiciliacion" value="domiciliacion" aria-describedby="metodo-pago-error">
+                <i class="bi bi-bank" aria-hidden="true"></i> Domiciliación bancaria
+              </label>
+              <label class="metodo" for="pago-tarjeta">
+                <input class="form-check-input" type="radio" name="metodo-pago" id="pago-tarjeta" value="tarjeta" aria-describedby="metodo-pago-error">
+                <i class="bi bi-credit-card" aria-hidden="true"></i> Tarjeta (simulada)
+              </label>
+            </div>
+            <div class="mensaje-error" id="metodo-pago-error" hidden></div>
+
+          
+            <fieldset class="bloque-pago mt-4" id="bloque-domiciliacion" hidden disabled>
+              <legend class="h6 fw-bold">Domiciliación bancaria</legend>
+              <div class="row g-3">
+                <div class="col-12">
+                  <label for="titular-cuenta" class="form-label">Titular de la cuenta *</label>
+                  <input type="text" class="form-control" id="titular-cuenta" name="titular-cuenta" autocomplete="name">
+                  <div class="mensaje-error" id="titular-cuenta-error" hidden></div>
+                </div>
+                <div class="col-12">
+                  <label for="iban" class="form-label">IBAN *</label>
+                  <input type="text" class="form-control" id="iban" name="iban" aria-describedby="iban-ayuda">
+                  <div class="form-text" id="iban-ayuda">ES y 22 cifras. Puedes dejar espacios. Ejemplo ficticio: ES91 2100 0418 4502 0005 1332</div>
+                  <div class="mensaje-error" id="iban-error" hidden></div>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="bloque-pago mt-4" id="bloque-tarjeta" hidden disabled>
+              <legend class="h6 fw-bold">Tarjeta simulada</legend>
+              <div class="row g-3">
+                <div class="col-12">
+                  <label for="titular-tarjeta" class="form-label">Titular de la tarjeta *</label>
+                  <input type="text" class="form-control" id="titular-tarjeta" name="titular-tarjeta" autocomplete="cc-name">
+                  <div class="mensaje-error" id="titular-tarjeta-error" hidden></div>
+                </div>
+                <div class="col-12">
+                  <label for="numero-tarjeta" class="form-label">Número de tarjeta *</label>
+                  <input type="text" class="form-control" id="numero-tarjeta" name="numero-tarjeta" inputmode="numeric" autocomplete="cc-number" aria-describedby="tarjeta-ayuda">
+                  <div class="form-text" id="tarjeta-ayuda">16 cifras. Ejemplo ficticio: 4111 1111 1111 1111</div>
+                  <div class="mensaje-error" id="numero-tarjeta-error" hidden></div>
+                </div>
+                <div class="col-6">
+                  <label for="caducidad" class="form-label">Caducidad (MM/AA) *</label>
+                  <input type="text" class="form-control" id="caducidad" name="caducidad" placeholder="MM/AA" autocomplete="cc-exp">
+                  <div class="mensaje-error" id="caducidad-error" hidden></div>
+                </div>
+                <div class="col-6">
+                  <label for="cvv" class="form-label">CVV *</label>
+                  <input type="text" class="form-control" id="cvv" name="cvv" inputmode="numeric" autocomplete="cc-csc">
+                  <div class="mensaje-error" id="cvv-error" hidden></div>
+                </div>
+              </div>
+            </fieldset>
+          </fieldset>
+
+         
+          <fieldset class="paso" id="paso-6" data-paso="6" hidden>
+            <legend class="titulo-paso" tabindex="-1">6. Revisa y confirma</legend>
+            <p class="text-muted">Comprueba que todo está bien. Puedes editar cualquier bloque.</p>
+
+            <!-- Lo rellena js/formulario.js -->
+            <div id="revision"></div>
+
+            <div class="legal mt-4">
+              <div class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" id="acepto-condiciones" name="acepto-condiciones" aria-describedby="acepto-condiciones-error">
+                <label class="form-check-label" for="acepto-condiciones">
+                  He leído y acepto las <a href="#" data-bs-toggle="modal" data-bs-target="#modal-condiciones">condiciones de contratación</a> *
+                </label>
+                <div class="mensaje-error" id="acepto-condiciones-error" hidden></div>
+              </div>
+              <div class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" id="acepto-privacidad" name="acepto-privacidad" aria-describedby="acepto-privacidad-error">
+                <label class="form-check-label" for="acepto-privacidad">
+                  He leído y acepto la <a href="#" data-bs-toggle="modal" data-bs-target="#modal-privacidad">política de privacidad</a> *
+                </label>
+                <div class="mensaje-error" id="acepto-privacidad-error" hidden></div>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="acepto-comunicaciones" name="acepto-comunicaciones">
+                <label class="form-check-label" for="acepto-comunicaciones">
+                  Quiero recibir novedades y ofertas de adidas <span class="text-muted">(opcional)</span>
+                </label>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Botones de navegación -->
+          <div class="navegacion d-flex flex-wrap justify-content-between gap-3 mt-5">
+            <button type="button" class="btn-form btn-form--secundario" id="btn-anterior">
+              <i class="bi bi-arrow-left" aria-hidden="true"></i> Anterior
+            </button>
+            <div class="d-flex flex-wrap gap-3 ms-auto">
+              <button type="button" class="btn-form btn-form--secundario" id="btn-volver-revision" hidden>
+                Volver a la revisión
+              </button>
+              <button type="button" class="btn-form" id="btn-siguiente">
+                Siguiente <i class="bi bi-arrow-right" aria-hidden="true"></i>
+              </button>
+              <button type="submit" class="btn-form" id="btn-confirmar" hidden>
+                Confirmar solicitud <i class="bi bi-arrow-right" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!-- Resumen del pedido (lo actualiza js/formulario.js) -->
+      <aside class="col-lg-4" aria-labelledby="resumen-titulo">
+        <div class="resumen-pedido">
+          <h2 class="titulo-resumen" id="resumen-titulo">Tu pedido</h2>
+          <div id="resumen-pedido" aria-live="polite"></div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Modales de demostración con los textos legales -->
+  <div class="modal fade" id="modal-condiciones" tabindex="-1" aria-labelledby="modal-condiciones-titulo" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content rounded-0">
+        <div class="modal-header">
+          <h2 class="modal-title h5" id="modal-condiciones-titulo">Condiciones de contratación</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <p><strong>Texto de demostración.</strong> Esta página forma parte de una práctica de clase y no es una contratación real.</p>
+          <p>La suscripción adiClub se renueva cada mes por el precio del plan elegido más los complementos mensuales. Los complementos de pago único se cobran una sola vez.</p>
+          <p>Puedes darte de baja en cualquier momento desde tu cuenta. Dispones de 14 días naturales para desistir sin dar explicaciones.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn-form" data-bs-dismiss="modal">Entendido</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modal-privacidad" tabindex="-1" aria-labelledby="modal-privacidad-titulo" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content rounded-0">
+        <div class="modal-header">
+          <h2 class="modal-title h5" id="modal-privacidad-titulo">Política de privacidad</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <p><strong>Texto de demostración.</strong> Los datos de este formulario no se envían a ningún servidor: solo se usan en tu navegador para la simulación.</p>
+          <p>En una contratación real, el responsable del tratamiento informaría aquí de la finalidad, la base legal, los destinatarios y tus derechos de acceso, rectificación, supresión y portabilidad.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn-form" data-bs-dismiss="modal">Entendido</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer bg-black text-white">
+    <div class="footer__legal py-4">
+      <ul class="list-unstyled d-flex flex-wrap justify-content-center mb-0 px-3">
+        <li><a href="#" data-bs-toggle="modal" data-bs-target="#modal-privacidad">Aviso de privacidad</a></li>
+        <li><a href="#" data-bs-toggle="modal" data-bs-target="#modal-condiciones">Condiciones legales</a></li>
+        <li><a href="index.html">Volver a la tienda</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/datos.js"></script>
+  <script src="js/validaciones.js"></script>
+  <script src="js/errores.js"></script>
+  <script src="js/formulario.js"></script>
+</body>
+</html>

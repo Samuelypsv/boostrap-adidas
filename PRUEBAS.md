@@ -31,12 +31,28 @@ Pruebas extra:
 | Móvil (390 px) | Sin scroll horizontal. Los pasos se ven solo con el número y el resumen va debajo | OK |
 | Escritorio (1366 px) | Formulario a la izquierda y resumen fijo a la derecha | OK |
 
+## Demostración de que valida JavaScript
+
+El formulario lleva `novalidate`. Además, `contratacion-prueba-sin-html.html` es la **copia de prueba**: el mismo formulario sin los 23 `required`, sin los 4 `maxlength` y con los `type="email"` y `type="tel"` cambiados a `text`. Usa los mismos archivos de `js/`.
+
+Prueba hecha en la copia el 16/11/2026 (paso 3, DNI `12345678A`, resto de datos válidos, botón *Siguiente*):
+
+| Qué se comprueba | Resultado |
+|---|---|
+| Atributos HTML de validación en la página | 0 |
+| Función ejecutada | `validarDni("12345678A")` en `js/validaciones.js` |
+| Valor que devuelve | `"La letra del DNI no es correcta. Revisa el número y la letra."` |
+| Mensaje en la interfaz | El mismo texto bajo el campo, `aria-invalid="true"` en el DNI y una línea en el resumen: «Paso 3 · DNI: La letra del DNI no es correcta…» |
+| Navegación | No avanza: sigue en el paso 3 con el foco en el DNI |
+
+Para verlo con punto de interrupción: abre la copia, F12 → *Sources* → `js/validaciones.js`, punto de interrupción en la primera línea de `validarDni` y repite la prueba.
+
 ## Cómo repetir las pruebas
 
 - **Reglas sueltas** (50 comprobaciones): `node tests/validaciones.test.js`
 - **Recorrido en navegador** (necesita Python y Playwright):
   `python3 tests/recorrido_e2e.py . <carpeta_con_bootstrap> capturas/practica2` y, para la copia sin validación HTML, se añade `sin-html` al final.
-- **A mano**: abre las herramientas del navegador (F12) → *Sources* → `js/validaciones.js`, pon un punto de interrupción en `validarDni` y pulsa *Siguiente* en el paso 3 con `12345678A`. Se para dentro de la función y la interfaz muestra el mensaje que devuelve.
+- **A mano**: con la copia de prueba y un punto de interrupción, como se explica arriba.
 
 ## Capturas
 

@@ -122,6 +122,7 @@ Los **pagos únicos** y la **cuota mensual** se suman por separado y nunca se me
 
 ```
 ├── contratacion.html        → los 6 pasos del formulario (con novalidate)
+├── contratacion-prueba-sin-html.html → copia de prueba sin atributos HTML de validación
 ├── css/contratacion.css     → estilos del formulario (usa las variables de styles.css)
 ├── js/datos.js              → planes, complementos y provincias (precios en céntimos)
 ├── js/validaciones.js       → REGLAS: funciones que devuelven el mensaje de error o ""
